@@ -6,16 +6,18 @@ package org.compi2.codigo3d.parser;
  */
 public class ControlC3D {
     
-    private static int temp = 0;
+    private static int temp = 1;
     private static String c3d = "";
     
+    private static int et=1;
     /**
      * Reinicia las variables estáticas relacionadas con la generación del
      * código de tres direcciones.
      */
     public static void reiniciar(){
-        temp = 0;
+        temp = 1;
         c3d = "";
+        et=1;
     }
     
     /**
@@ -23,8 +25,13 @@ public class ControlC3D {
      * @return El siguiente temporal (t$#)
      */
     public static String generaTemp(){
-        return "t$"+temp++;
+        return "t"+temp++;
     }
+    
+    public static  String getEti(){     
+        return "L"+et++;
+    }
+    
     
     /**
      * Agrega la sentencia que recibe como parámetro a la cadena de código
